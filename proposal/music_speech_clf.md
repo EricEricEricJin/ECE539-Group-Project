@@ -85,7 +85,7 @@ One notable question arising in the context of this project is how CNN models ca
 
 ## Project Plan
 - _Initial Project Proposal_ :
--   The project begins with the preparation of an initial project proposal outlining the goals, methods, and expected outcomes. This proposal serves as a         roadmap for the entire project. Tentative Completion Date: (10/20/2023)
+    The project begins with the preparation of an initial project proposal outlining the goals, methods, and expected outcomes. This proposal serves as a         roadmap for the entire project. Tentative Completion Date: (10/20/2023)
 - _Environment Setup_ :
 -   We will build up our project environment utilizing Google Collab and GitHub for easy collaboration and development. The GitHub repository will include        all project-related documents, including code, figures, diagrams, and the final presentation slides.
 - _Verify Previous Works Model_ :
