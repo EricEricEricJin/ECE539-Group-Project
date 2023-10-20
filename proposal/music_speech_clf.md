@@ -110,6 +110,7 @@ One notable question arising in the context of this project is how CNN models ca
 -   The project presentation will be prepared, summarizing the entire project, methodologies, findings, and key takeaways. This presentation is crucial for      sharing our work with peers and stakeholders. Tentative Completion Date: (12/11/2023)
 - _Work on the Final Report_ :
 -   The final project report will be composed, providing a comprehensive overview of the entire project. It will include details on the problem statement,       methodology, results, discussion, and conclusions. The report serves as a record of our work and findings. Tentative Completion Date: (12/14/2023)
+-   _Gantt Project Timeline_ :
 -   ![image](https://github.com/EricEricEricJin/ECE539-Group-Project/assets/148291680/0f350619-2fa6-4815-a422-47e1fcc50531)
 
 
