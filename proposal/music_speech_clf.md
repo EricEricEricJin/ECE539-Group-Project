@@ -84,7 +84,7 @@ Also, due to the FIR filter chosen, it will filter out long continuous positive 
 One notable question arising in the context of this project is how CNN models can effectively handle audio data in a matrix format where axis0 represents the frequency domain and axis1 represents the time domain. We will investigate this challenge and explore potential solutions.
 
 ## Project Plan
-- _Initial Project Proposal_
+- _Initial Project Proposal_\
     The project begins with the preparation of an initial project proposal outlining the goals, methods, and expected outcomes. This proposal serves as a         roadmap for the entire project. Tentative Completion Date: (10/20/2023)
 - _Environment Setup_
     We will build up our project environment utilizing Google Collab and GitHub for easy collaboration and development. The GitHub repository will include        all project-related documents, including code, figures, diagrams, and the final presentation slides.
