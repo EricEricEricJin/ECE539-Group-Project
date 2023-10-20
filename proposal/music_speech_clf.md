@@ -1,6 +1,6 @@
 # ECE539 Project Proposal
 
-__TITLE__: Singing livestream segmentation assistance
+__TITLE__: Singing livestream segmentation assistant
 
 __KEY WORDS__: Audio classification, FFT, CNN, FIR, Speaker recognition
 

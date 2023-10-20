@@ -1,4 +1,4 @@
-# Singing livestream segmentation assistance
+# Singing livestream segmentation assistant
 ECE539 Course Project
 
 Contributors: [YUSHANG JIN](https://github.com/EricEricEricJin), [Avi BALAM](https://github.com/AviRaj1109), [ZALISSA](https://github.com/Zaliss)
