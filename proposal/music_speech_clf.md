@@ -119,6 +119,6 @@ One notable question arising in the context of this project is how CNN models ca
 - Tesla T4 from Google Colab
 
 ## References
-•	Code AI Blogs "Classifying Music and Speech with Machine Learning." Medium, [https://medium.com/m2mtechconnect/classifying-music-and-speech-with-machine-learning-e036ffab002e], 2021.
-•	TensorFlow. "gtzan_music_speech Dataset." TensorFlow Datasets, [https://www.tensorflow.org/datasets/catalog/gtzan_music_speech].
+- Code AI Blogs "Classifying Music and Speech with Machine Learning." Medium, [https://medium.com/m2mtechconnect/classifying-music-and-speech-with-machine-learning-e036ffab002e], 2021.
+- TensorFlow. "gtzan_music_speech Dataset." TensorFlow Datasets, [https://www.tensorflow.org/datasets/catalog/gtzan_music_speech].
 
