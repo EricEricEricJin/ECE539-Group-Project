@@ -79,6 +79,7 @@ Also, due to the FIR filter chosen, it will filter out long continuous positive 
 - FFT
 - CNN
 - FIR
+- Our approach will involve replicating the previous work by Doe et al. [Code AI Blogs, 2021] for audio classification. We will perform hyperparameter         optimization and preprocessing to improve the accuracy of the audio classifier. Following this, we aim to extend the classifier's capabilities to perform    audio segmentation. We think that developing accurate and efficient audio classification and segmentation models can have a positive effect on content       delivery, accessibility, and the broader field of AI and machine learning. In addition, algorithms such as this can help content creators, businesses, and   even individuals with personal uses. It is a common enough issue to be known around the world where you like to partition a certain type of audio from the   whole mix.
 
 ## Research Question
 One notable question arising in the context of this project is how CNN models can effectively handle audio data in a matrix format where axis0 represents the frequency domain and axis1 represents the time domain. We will investigate this challenge and explore potential solutions.
