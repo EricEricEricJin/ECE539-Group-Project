@@ -9,6 +9,8 @@ __TEAM MEMBERS__:
 - YUSHANG JIN, 9083280140, [yjin248@wisc.edu](yjin248@wisc.edu)
 - ZALISSA ZONGO KAFANDO, 
 
+__GITHUB REPO__: [https://github.com/EricEricEricJin/ECE539-Group-Project/](https://github.com/EricEricEricJin/ECE539-Group-Project/)
+
 ## Overview 
 Our target is to assist in slicing singing livestream videos, that is help cutting the singing parts out from the whole livestream recording, by highlighting the potential singing partitions. The core is audio classification that distinguish between singing and speech.
 
@@ -70,7 +72,9 @@ We have reproduced the previous work mentioned above and applied it to our use c
 
     With above preprocessing, each input is a spectrogram matrix whose ith row is the ith chunk's frequency spectrum. Output is by one-hot coding, (e.g., music is [0 1] and speech is [1 0]). Then use CNN to connect input and output, and fit, evaluate the model.
 
-- Result: below is the validating accuracy against epoch number of the model with `xxm_splitted` dataset. We can see Code AI didn't lie and the accuracy of its model is very high. 
+- Result: 
+
+    below is the validating accuracy against epoch number of the model with `xxm_splitted` dataset. We can see Code AI didn't lie and the accuracy of its model is very high. 
 
     ![post outcome](Figure/post_outcome.png)
 
