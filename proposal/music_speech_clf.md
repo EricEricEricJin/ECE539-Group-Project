@@ -5,7 +5,7 @@ __PROJECT TITLE__: Singing livestream segmentation assistant
 __KEY WORDS__: Audio classification, FFT, CNN, FIR, Speaker Verification
 
 __TEAM MEMBERS__: 
-- Avi BALAM, 
+- Avi BALAM, 9086006591
 - YUSHANG JIN, 9083280140, [yjin248@wisc.edu](yjin248@wisc.edu)
 - ZALISSA ZONGO KAFANDO, 
 
