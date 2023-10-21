@@ -170,7 +170,7 @@ Due to the target of our program, we want a high sensitivity (TP/P), and can sac
     We will rigorously test our CNN model on the testing dataset to evaluate its accuracy and performance. This process involves feeding untrained images        from the same distribution to the model and assessing its predictive capabilities. The results will be logged and used to determine the most effective       model.
 - _Evaluate Results_ :
     
-    An in-depth evaluation of the model's performance will be carried out, including metrics such as accuracy, precision, recall, and F1 score. The goal is      to assess how well the model classifies brain tumor images and its suitability for practical medical applications.
+    An in-depth evaluation of the model's performance will be carried out, including metrics such as accuracy, precision, recall, and F1 score. The goal is      to assess how well the model classifies the different audio segments and by how much degree it would be useful in a rela life application.
 
 - _Visualize Results_ :
 
