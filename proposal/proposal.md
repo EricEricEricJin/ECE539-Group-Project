@@ -7,7 +7,7 @@ __KEY WORDS__: Audio classification, FFT, CNN, FIR, Speaker Verification
 __TEAM MEMBERS__: 
 - Avi BALAM, 9086006591, [abalam@wisc.edu](abalam@wisc.edu)
 - YUSHANG JIN, 9083280140, [yjin248@wisc.edu](yjin248@wisc.edu)
-- ZALISSA ZONGO KAFANDO, [zongokafando@wisc.edu](zongokafando@wisc.edu)
+- ZALISSA ZONGO KAFANDO, 9084045047, [zongokafando@wisc.edu](zongokafando@wisc.edu)
 
 __GITHUB REPO__: [https://github.com/EricEricEricJin/ECE539-Group-Project/](https://github.com/EricEricEricJin/ECE539-Group-Project/)
 
@@ -28,11 +28,11 @@ We will use the three data sources below, all open, free, and well labeled. One 
 
 - `xxm_splitted`
 
-    As mentioned we want to train and test the model with one same person's dataset, we obtained videos on [bilibili](bilibili.com) in which a person only talk (no singing) and in which the same person only sing (no talking).
+    For better performance we want to train and test the model with one same person's dataset. We obtained videos on [bilibili](https://bilibili.com) in which a person only talk (no singing) and in which the same person only sing (no talking).
 
     The videos are crawled down (using Python, selenium and [bilili](https://github.com/yutto-dev/bilili)), converted to audio, sliced into 30-second pieces, resampled at 22050KHz, and mixed into mono channel (using Python and ffmpeg). This results in the exactly same format as `gtzan` dataset.
 
-    Below is the summary of our dataset
+    Below is the summary of this dataset
     ```
     $ ls xxm_singing/*.wav | wc -l; ls xxm_speech/*.wav | wc -l
     137
@@ -46,7 +46,7 @@ We will use the three data sources below, all open, free, and well labeled. One 
 
 - `xxm_mixed` 
     
-    There are also long (not splitted, ~150min each) videos in which a person sometimes talks and sometimes sings. There are human-labeled timestamps of starts of each singing in the description of the video. These descriptions are crawled down, parsed using regular expression, and stored in hour,min,sec format as below (one video maps to one CSV file). They are used to test and score the performance of our final program. 
+    There are also long (not splitted, ~150min each) videos in which a person (same person as in `xxm_splitted`) sometimes talks and sometimes sings. There are human-labeled timestamps of starts of each singing in the description of the video. These descriptions are crawled down, parsed using regular expression, and stored in hour,min,sec format as below (one video maps to one CSV file). They are used to test and score the performance of our final program. 
     ```csv
     $ cat crawler/label/BV1134y1g7qX.csv 
     0, 19, 11
@@ -56,13 +56,13 @@ We will use the three data sources below, all open, free, and well labeled. One 
     [...trunked...]
     ```
 
-- Crawler and data processing scripts is on git repo.
+- Crawler and data processing scripts is on [Github](https://github.com/EricEricEricJin/ECE539-Group-Project/tree/master/crawler).
 
 ### Method
 We have reproduced the previous work mentioned above and applied it to our use case. The procedures, outcomes, and analysis are below.
 
 #### Reproduce previous work
-[Classifying Music and Speech with Machine Learning](https://medium.com/m2mtechconnect/classifying-music-and-speech-with-machine-learning-e036ffab002e)
+[Our Jupyter Notebook](https://github.com/EricEricEricJin/ECE539-Group-Project/blob/master/music_speech_clf.ipynb)
 
 - Data preprocessing: 
 
@@ -74,7 +74,7 @@ We have reproduced the previous work mentioned above and applied it to our use c
 
 - Result: 
 
-    below is the validating accuracy against epoch number of the model with `xxm_splitted` dataset. We can see Code AI didn't lie and the accuracy of its model is very high. 
+    Below is the validating accuracy against epoch number of the model with `xxm_splitted` dataset. We can see Code AI didn't lie and the accuracy of its model is very high. 
 
     ![post outcome](Figure/post_outcome.png)
 
@@ -102,7 +102,7 @@ We (human) listened to the false positive points and find at those points there 
 Also, the FIR filter I applied is used to detect rising edges, it will filter out long continuous positive points. This is consistent with our goal since we assume each song is in certain length and there is no continuous singings.
 
 #### Challenges and what to do next
-- The 'threshold' should even exist.. 
+- The 'threshold' should not even exist
 
     As shown in above model block diagram, a chunk will be classified as singing if the probability of singing is higher than threshold. Theoretically there shouldn't be a threshold, as the network is trained without it. But with a few tests already done we noticed the FPR is sometimes too high if no threshold (i.e., use output of the CNN directly), even with a filter. 
 
@@ -182,7 +182,7 @@ Due to the target of our program, we want a high sensitivity (TP/P), and can sac
 
     The final project report will be composed, providing a comprehensive overview of the entire project. It will include details on the problem statement,       methodology, results, discussion, and conclusions. The report serves as a record of our work and findings. Tentative Completion Date: (12/14/2023)
 -   _Gantt Project Timeline_ :
-    ![image](https://github.com/EricEricEricJin/ECE539-Group-Project/assets/148291680/0f350619-2fa6-4815-a422-47e1fcc50531)
+    ![Gantt_chart](https://github.com/EricEricEricJin/ECE539-Group-Project/assets/148291680/0f350619-2fa6-4815-a422-47e1fcc50531)
 
 
 ## Frameworks and computing recourses
@@ -190,8 +190,14 @@ Due to the target of our program, we want a high sensitivity (TP/P), and can sac
 - Tesla T4 on Google Colab 
 
 ## About some concerns raised by Professor
-- Computation time: upon our reproduction of previous work, we find the preprocessing (FFT), training, and testing is fast on T4 GPU. 
-- Dataset size: Professor recommends us to extract the features from audio and only save the features as dataset. However, in our case the feature is spectrogram. Raw audio is in size (661500, ) and spectrogram is currently in size (5166, 129) (depends on FFT sliding window size and step), which is even larger. The GBs dataset may be difficult to distribute on Github, but they can be handled by google drive and colab easily.
+- Computation time
+    
+    Upon our reproduction of previous work, we find the preprocessing (FFT), training, and testing is fast on T4 GPU. 
+- Dataset size
+    
+    Professor recommends us to extract the features from audio and only save the features as dataset. However, in our case the feature is spectrogram. Raw audio is in size (661500, ) and spectrogram is currently in size (5166, 129) (depends on FFT sliding window size and step), which is even larger. 
+    
+    The GBs dataset may be difficult to distribute on Github, but they can be handled by google drive and Colab easily.
 
 ## References
 - Code AI Blogs "Classifying Music and Speech with Machine Learning." Medium, [https://medium.com/m2mtechconnect/classifying-music-and-speech-with-machine-learning-e036ffab002e](https://medium.com/m2mtechconnect/classifying-music-and-speech-with-machine-learning-e036ffab002e), 2021.
