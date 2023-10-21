@@ -7,7 +7,7 @@ __KEY WORDS__: Audio classification, FFT, CNN, FIR, Speaker Verification
 __TEAM MEMBERS__: 
 - Avi BALAM, 9086006591, [abalam@wisc.edu](abalam@wisc.edu)
 - YUSHANG JIN, 9083280140, [yjin248@wisc.edu](yjin248@wisc.edu)
-- ZALISSA ZONGO KAFANDO, 
+- ZALISSA ZONGO KAFANDO, [zongokafando@wisc.edu]-(zongokafando@wisc.edu)
 
 __GITHUB REPO__: [https://github.com/EricEricEricJin/ECE539-Group-Project/](https://github.com/EricEricEricJin/ECE539-Group-Project/)
 
