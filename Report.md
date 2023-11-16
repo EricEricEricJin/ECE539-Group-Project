@@ -57,3 +57,12 @@ Below is the outcome, blue line is the prediction (1 for singing, 0 for speech) 
 We (human) listened to the false positive points and find at those points there is background music making the model predict them as singing. To fix this issue, speaker recognition may be applied to recognize the specific person's voice print.
 
 Also, the FIR filter I applied is used to detect rising edges, it will filter out long continuous positive points. This is consistent with our goal since we assume each song is in certain length and there is no continuous singings.
+
+### Progress So Far
+The project initiation commenced with the formulation of a detailed project proposal on 10/20/2023, delineating the project's objectives, methodologies, and anticipated outcomes. The subsequent phase involved the establishment of a collaborative development environment utilizing Google Colab and GitHub, wherein all pertinent project-related documents were meticulously organized within the GitHub repository.
+
+To ascertain the viability of the project, the team diligently examined the previous works model, critically analyzing its components and evaluating the applicability of Tensorflow, a fundamental framework for machine learning. Subsequently, an exhaustive review of extant models within the realm of online videos on the chosen platform was conducted, with a specific emphasis on identifying potential optimizations for the audio classification model.
+
+The pivotal step of data collection and preprocessing ensued, wherein data from designated sources was systematically acquired and refined to ensure cleanliness, appropriate formatting, and readiness for integration into the classification model. Concurrently, the team embarked on the construction of a Convolutional Neural Network (CNN) model, delving into the intricacies of CNNs and leveraging TensorFlow for model development. This phase marked a crucial juncture in the project, laying the foundation for the subsequent stages of model refinement and evaluation.
+
+
