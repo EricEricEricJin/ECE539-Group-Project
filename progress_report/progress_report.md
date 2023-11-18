@@ -5,7 +5,7 @@
 Singing livestream segmentation assistant</h1>
 </center>
 
-__TEAM #__: 9
+__PROJECT TEAM #__: 9
 
 __TEAM MEMBERS__: 
 | Name | Campus ID | Email | UG/PG |
