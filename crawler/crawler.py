@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 import re
 import pandas as pd
+import os
 
 chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument('--headless')
@@ -18,14 +19,26 @@ page_cnt = 0
 video_cnt = 0
 valid_cnt = 0
 
+exist_BV_list = [re.findall("BV[0-9a-zA-Z]*", _)[0] for _ in os.listdir("label")]
+print(exist_BV_list)
+# exit()
+
 while True:
     page_cnt += 1
     video_list = browser.find_elements(By.XPATH, '//ul[@class="clearfix cube-list"]//a[@class="title"]')
 
     for video in video_list:
         video_cnt += 1
-        link = video.get_attribute("href") 
+        try:
+            link = video.get_attribute("href") 
+        except:
+            print("cannot find link")
+            continue
+
         BV = re.findall("BV[0-9a-zA-Z]*", link)[0]
+        if (BV in exist_BV_list):
+            print(BV, "exists")
+            continue
 
         # enter and switch to video tab
         video.click()
@@ -33,28 +46,31 @@ while True:
         browser.switch_to.window(browser.window_handles[1])
 
         # get description text
-        desc = browser.find_element(By.XPATH, '//span[@class="desc-info-text"]').text
+        try:
+            desc = browser.find_element(By.XPATH, '//span[@class="desc-info-text"]').text
+            # parse timestamp from desc
+            hms_list = []
+            for line in desc.split('\n'):
+                re_ret = re.findall(r"([0-9]{1,2}:)?([0-9]{1,2}):([0-9]{1,2})", line)
+                if (len(re_ret)):
+                    re_ret = re_ret[0]
+                    hms = (0 if re_ret[0] == '' else int(re_ret[0][:-1])), int(re_ret[1]), int(re_ret[2])
+                    hms_list.append(hms)
 
-        # parse timestamp from desc
-        hms_list = []
-        for line in desc.split('\n'):
-            re_ret = re.findall(r"([0-9]{1,2}:)?([0-9]{1,2}):([0-9]{1,2})", line)
-            if (len(re_ret)):
-                re_ret = re_ret[0]
-                hms = (0 if re_ret[0] == '' else int(re_ret[0][:-1])), int(re_ret[1]), int(re_ret[2])
-                hms_list.append(hms)
-
-        if (len(hms_list)):
-            with open(BV+".csv", "w") as f:
-                for hms in hms_list:
-                    f.write(str(hms).strip("()")+"\n")
-            valid_cnt += 1
-            print("PAGE {},\t CNT {},\t BV {},\t VALID.".format(page_cnt, video_cnt, BV))
-        else:
-            print("PAGE {},\t CNT {},\t BV {},\t INVALID.".format(page_cnt, video_cnt, BV))
-        # close tab and go to homepage
-        browser.close()
-        browser.switch_to.window(browser.window_handles[0])
+            if (len(hms_list)):
+                with open(os.path.join("label", BV+".csv"), "w") as f:
+                    for hms in hms_list:
+                        f.write(str(hms).strip("()")+"\n")
+                valid_cnt += 1
+                print("PAGE {},\t CNT {},\t BV {},\t VALID.".format(page_cnt, video_cnt, BV))
+            else:
+                print("PAGE {},\t CNT {},\t BV {},\t INVALID.".format(page_cnt, video_cnt, BV))
+        except:
+            print(BV, "no desc.")
+        finally:
+            # close tab and go to homepage
+            browser.close()
+            browser.switch_to.window(browser.window_handles[0])
     
     # next page
     try:
