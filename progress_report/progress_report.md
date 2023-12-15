@@ -5,7 +5,7 @@
 Singing livestream segmentation assistant</h1>
 </center>
 
-__TEAM #__: 9
+__PROJECT TEAM #__: 9
 
 __TEAM MEMBERS__: 
 | Name | Campus ID | Email | UG/PG |
@@ -146,7 +146,7 @@ _Sorry that to save time here I use this way to present. I will draw them clearl
 Google Colab Pro is used. Tesla T4 is fast enough for our models and 51GB RAM is sufficient for our model and dataset.
 
 #### Evaluation
-I am temporarily stuck on this. See discussion below.
+Temporarily stuck on this. See discussion below.
 
 ### Results
 Below are four outcomes with our current program.
